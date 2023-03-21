@@ -14,8 +14,8 @@ void nfree_matrix(matrix_t *mx, int n) {
 }
 
 int create_matrix_from_two(matrix_t *A, matrix_t *B, matrix_t *result) {
-  if (result == NULL) {
-    return WR_MATRIX;
+  if (A == NULL || B == NULL || result == NULL) {
+    return CALC_ERR;
   }
 
   if (A->rows != B->rows || A->columns != B->columns) {
@@ -31,8 +31,8 @@ int create_matrix_from_two(matrix_t *A, matrix_t *B, matrix_t *result) {
 
 void make_every_val_from_two(matrix_t *A, matrix_t *B, matrix_t *result,
                              double act(double, double)) {
-  for (int i = 0; i < A->rows; ++i) {
-    for (int j = 0; j < A->columns; ++j) {
+  for (int i = 0; i < result->rows; ++i) {
+    for (int j = 0; j < result->columns; ++j) {
       result->matrix[i][j] = act(A->matrix[i][j], B->matrix[i][j]);
     }
   }

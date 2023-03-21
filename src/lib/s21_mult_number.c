@@ -11,8 +11,8 @@ int s21_mult_number(matrix_t *A, double number, matrix_t *result) {
     return WR_MATRIX;
   }
 
-  for (int i = 0; i < A->rows; ++i) {
-    for (int j = 0; j < A->columns; ++j) {
+  for (int i = 0; i < result->rows; ++i) {
+    for (int j = 0; j < result->columns; ++j) {
       result->matrix[i][j] = A->matrix[i][j] * number;
     }
   }
