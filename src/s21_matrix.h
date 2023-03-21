@@ -31,6 +31,12 @@ int s21_calc_complements(matrix_t *A, matrix_t *result);
 int s21_determinant(matrix_t *A, double *result);
 int s21_inverse_matrix(matrix_t *A, matrix_t *result);
 
+// utils
 void nfree_matrix(matrix_t *mx, int n);
+int create_matrix_from_two(matrix_t *A, matrix_t *B, matrix_t *result);
+void make_every_val_from_two(matrix_t *A, matrix_t *B, matrix_t *result,
+                             double act(double, double));
+double sum_double(double a, double b);
+double sub_double(double a, double b);
 
 #endif  // CMATRIX_S21_MATRIX_H
