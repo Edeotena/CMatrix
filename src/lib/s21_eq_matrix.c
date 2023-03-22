@@ -4,7 +4,7 @@
 #include "../s21_matrix.h"
 
 int s21_eq_matrix(matrix_t *A, matrix_t *B) {
-  if (A == NULL || B == NULL) {
+  if (is_valid(A) != OK || is_valid(B) != OK) {
     return FAILURE;
   }
 

@@ -1,6 +1,7 @@
 CC = gcc
 
-FLAGS = -Wall -Wextra -Werror -std=c11 -fanalyzer -pedantic
+FLAGS = -Wall -Wextra -Werror -std=c11 #-fanalyzer -pedantic
+VALGRIND_FLAGS = --log-file="valgrind.txt" --track-origins=yes --trace-children=yes --leak-check=full --leak-resolution=med
 
 ADDITIONAL_FLAGS = -lcheck
 UNAME_S := $(shell uname -s)
@@ -33,6 +34,9 @@ test: apply_clang $(SRC_C_FILES)
 	$(CC) $(FLAGS) $(SRC_C_FILES) $(TEST_C_FILES) -o $(TEST_TARGET) $(ADDITIONAL_FLAGS)
 	./$(TEST_TARGET)
 
+build_test: apply_clang $(SRC_C_FILES)
+	$(CC) $(FLAGS) $(SRC_C_FILES) $(TEST_C_FILES) -o $(TEST_TARGET) $(ADDITIONAL_FLAGS)
+
 build: apply_clang $(SRC_C_FILES)
 	$(CC) $(FLAGS) $(SRC_C_FILES) main.c -o s21_main $(ADDITIONAL_FLAGS)
 	./s21_main
@@ -56,6 +60,7 @@ cppcheck:
 
 clean_test:
 	rm -f $(TEST_TARGET)
+	rm -f s21_main
 
 clean_report:
 	rm -rf $(REPORT_DIR)
@@ -70,3 +75,7 @@ clean_gcov:
 	rm -f *.gc*
 
 clean: clean_test clean_report clean_lib clean_obj clean_gcov
+
+valgrind: apply_clang build_test
+	valgrind $(VALGRIND_FLAGS) ./$(TEST_TARGET)
+	grep -n "ERROR SUMMARY" valgrind.txt | grep -v "0 errors"

@@ -2,6 +2,9 @@
 cmake-build-debug
 s21_main
 s21_test
+*.gc*
+report
+valgrind.txt
 
 # Prerequisites
 *.d

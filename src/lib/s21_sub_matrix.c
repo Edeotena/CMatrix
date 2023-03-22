@@ -3,8 +3,8 @@
 #include "../s21_matrix.h"
 
 int s21_sub_matrix(matrix_t *A, matrix_t *B, matrix_t *result) {
-  if (A == NULL || B == NULL || result == NULL) {
-    return CALC_ERR;
+  if (is_valid(A) != OK || is_valid(B) != OK || result == NULL) {
+    return result == NULL ? CALC_ERR : WR_MATRIX;
   }
 
   int code = create_matrix_from_two(A, B, result);
