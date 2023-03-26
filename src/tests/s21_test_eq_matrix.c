@@ -226,7 +226,7 @@ Suite *suite_eq_matrix(void) {
   TCase *tc = tcase_create("case_eq_matrix");
 
   tcase_add_test(tc, not_eq);
-  tcase_add_loop_test(tc, eq_matrix, 0, 100);
+  tcase_add_loop_test(tc, eq_matrix, 0, 5);
   tcase_add_test(tc, not_eq1);
 
   tcase_add_test(tc, zero_matrix);

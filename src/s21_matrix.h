@@ -1,6 +1,9 @@
 #ifndef CMATRIX_S21_MATRIX_H
 #define CMATRIX_S21_MATRIX_H
 
+#include <math.h>
+#include <stdlib.h>
+
 #define EPS 1e-7
 #define DEFAULT_MATRIX \
   { 0 }

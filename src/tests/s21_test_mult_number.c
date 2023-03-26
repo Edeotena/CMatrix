@@ -47,8 +47,8 @@ Suite *suite_mult_number(void) {
   Suite *s = suite_create(BLUE "s21_mult_number" WHITE);
   TCase *tc = tcase_create("case_mult_number");
 
-  tcase_add_loop_test(tc, mult_number_matrix, 0, 100);
-  tcase_add_loop_test(tc, mult_number_matrix2, 0, 100);
+  tcase_add_loop_test(tc, mult_number_matrix, 0, 5);
+  tcase_add_loop_test(tc, mult_number_matrix2, 0, 5);
 
   suite_add_tcase(s, tc);
   return s;

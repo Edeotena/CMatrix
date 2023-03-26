@@ -1,0 +1,34 @@
+Running suite(s): [36ms21_create_matrix[0m
+100%: Checks: 12, Failures: 0, Errors: 0
+[32mSuccess
+[0mRunning suite(s): [36ms21_remove_matrix[0m
+100%: Checks: 5, Failures: 0, Errors: 0
+[32mSuccess
+[0mRunning suite(s): [36ms21_eq_matrix[0m
+100%: Checks: 112, Failures: 0, Errors: 0
+[32mSuccess
+[0mRunning suite(s): [36ms21_sum_matrix[0m
+100%: Checks: 300, Failures: 0, Errors: 0
+[32mSuccess
+[0mRunning suite(s): [36ms21_sub_matrix[0m
+100%: Checks: 300, Failures: 0, Errors: 0
+[32mSuccess
+[0mRunning suite(s): [36ms21_mult_number[0m
+100%: Checks: 200, Failures: 0, Errors: 0
+[32mSuccess
+[0mRunning suite(s): [36ms21_mult_matrix[0m
+100%: Checks: 202, Failures: 0, Errors: 0
+[32mSuccess
+[0mRunning suite(s): [36ms21_transpose[0m
+100%: Checks: 200, Failures: 0, Errors: 0
+[32mSuccess
+[0mRunning suite(s): [36ms21_determinant[0m
+100%: Checks: 107, Failures: 0, Errors: 0
+[32mSuccess
+[0mRunning suite(s): [36ms21_calc_complements[0m
+100%: Checks: 4, Failures: 0, Errors: 0
+[32mSuccess
+[0mRunning suite(s): [36ms21_inverse_matrix[0m
+100%: Checks: 14, Failures: 0, Errors: 0
+[32mSuccess
+[0m

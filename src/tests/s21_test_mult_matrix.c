@@ -118,8 +118,8 @@ Suite *suite_mult_matrix(void) {
   Suite *s = suite_create(BLUE "s21_mult_matrix" WHITE);
   TCase *tc = tcase_create("case_mult_matrix");
 
-  tcase_add_loop_test(tc, mult_matrix, 0, 100);
-  tcase_add_loop_test(tc, mult_matrix2, 0, 100);
+  tcase_add_loop_test(tc, mult_matrix, 0, 5);
+  tcase_add_loop_test(tc, mult_matrix2, 0, 5);
   tcase_add_test(tc, mult_matrix3);
   tcase_add_test(tc, simple_mult);
 

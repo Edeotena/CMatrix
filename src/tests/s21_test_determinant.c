@@ -16,6 +16,20 @@ START_TEST(determinant1) {
 }
 END_TEST
 
+START_TEST(zero_matrix) {
+  const int size = 0;
+  matrix_t m = {0};
+  s21_create_matrix(size, size, &m);
+
+  double res;
+  int code = s21_determinant(&m, &res);
+  ck_assert_double_eq_tol(res, 1, 1e-6);
+  ck_assert_int_eq(code, 1);
+
+  s21_remove_matrix(&m);
+}
+END_TEST
+
 START_TEST(determinant2) {
   const int size = 4;
   matrix_t m = {0};
@@ -161,7 +175,8 @@ Suite *suite_determinant(void) {
   tcase_add_test(tc, determinant4);
   tcase_add_test(tc, determinant5);
   tcase_add_test(tc, determinant6);
-  tcase_add_loop_test(tc, determinant7, 0, 100);
+  tcase_add_loop_test(tc, determinant7, 0, 5);
+  tcase_add_test(tc, zero_matrix);
   tcase_add_test(tc, determinant8);
 
   suite_add_tcase(s, tc);

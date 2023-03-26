@@ -1,5 +1,13 @@
 #include "s21_test_matrix.h"
 
+START_TEST(null_matrix) {
+  int res = 0;
+
+  res = s21_create_matrix(1, 1, NULL);
+  ck_assert_int_eq(res, WR_MATRIX);
+}
+END_TEST
+
 START_TEST(s21_create_matrix_01) {
   int res = 0;
   matrix_t A = {0};
@@ -135,6 +143,7 @@ Suite *suite_create_matrix(void) {
   tcase_add_test(tc, s21_create_matrix_07);
   tcase_add_test(tc, s21_create_matrix_08);
   tcase_add_test(tc, s21_create_matrix_09);
+  tcase_add_test(tc, null_matrix);
   tcase_add_test(tc, create_1);
   tcase_add_test(tc, create_2);
   tcase_add_test(tc, create_3);

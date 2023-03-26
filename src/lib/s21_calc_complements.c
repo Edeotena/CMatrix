@@ -1,18 +1,18 @@
-#include <stdio.h>
-
 #include "../s21_matrix.h"
 
 int s21_calc_complements(matrix_t *A, matrix_t *result) {
-  if (is_valid(A) != OK || result == NULL) {
-    return result == NULL ? CALC_ERR : WR_MATRIX;
-  }
-
-  if (A->rows != A->columns || A->rows == 1) {
+  if (A->rows != A->columns) {
     return CALC_ERR;
   }
 
-  if (s21_create_matrix(A->rows, A->columns, result) != OK) {
+  if (is_valid(A) != OK ||
+      s21_create_matrix(A->rows, A->columns, result) != OK) {
     return WR_MATRIX;
+  }
+
+  if (result->rows == 1) {
+    result->matrix[0][0] = 0;
+    return OK;
   }
 
   for (int i = 0; i < result->rows; ++i) {

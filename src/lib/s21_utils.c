@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-
 #include "../s21_matrix.h"
 
 void nfree_matrix(matrix_t *mx, int n) {

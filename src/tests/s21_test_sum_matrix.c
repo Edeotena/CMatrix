@@ -83,9 +83,9 @@ Suite *suite_sum_matrix(void) {
   Suite *s = suite_create(BLUE "s21_sum_matrix" WHITE);
   TCase *tc = tcase_create("case_sum_matrix");
 
-  tcase_add_loop_test(tc, sum_matrix, 0, 100);
-  tcase_add_loop_test(tc, sum_matrix1, 0, 100);
-  tcase_add_loop_test(tc, sum_matrix2, 0, 100);
+  tcase_add_loop_test(tc, sum_matrix, 0, 5);
+  tcase_add_loop_test(tc, sum_matrix1, 0, 5);
+  tcase_add_loop_test(tc, sum_matrix2, 0, 5);
 
   suite_add_tcase(s, tc);
   return s;

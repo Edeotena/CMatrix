@@ -1,10 +1,13 @@
-#include <stdio.h>
-
 #include "../s21_matrix.h"
 
 int s21_determinant(matrix_t *A, double *result) {
-  if (is_valid(A) != OK || result == NULL) {
-    return result == NULL ? CALC_ERR : WR_MATRIX;
+  if (result == NULL) {
+    return CALC_ERR;
+  }
+  *result = A->rows == 0 ? 1 : 0;
+
+  if (is_valid(A) != OK) {
+    return WR_MATRIX;
   }
 
   if (A->rows != A->columns) {

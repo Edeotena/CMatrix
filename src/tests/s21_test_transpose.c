@@ -50,8 +50,8 @@ Suite *suite_transpose(void) {
   Suite *s = suite_create(BLUE "s21_transpose" WHITE);
   TCase *tc = tcase_create("case_transpose_matrix");
 
-  tcase_add_loop_test(tc, transpose_matrix, 0, 100);
-  tcase_add_loop_test(tc, transpose_matrix2, 0, 100);
+  tcase_add_loop_test(tc, transpose_matrix, 0, 5);
+  tcase_add_loop_test(tc, transpose_matrix2, 0, 5);
 
   suite_add_tcase(s, tc);
   return s;

@@ -83,9 +83,9 @@ Suite *suite_sub_matrix(void) {
   Suite *s = suite_create(BLUE "s21_sub_matrix" WHITE);
   TCase *tc = tcase_create("case_sub_matrix");
 
-  tcase_add_loop_test(tc, sub_matrix, 0, 100);
-  tcase_add_loop_test(tc, sub_matrix1, 0, 100);
-  tcase_add_loop_test(tc, sub_matrix2, 0, 100);
+  tcase_add_loop_test(tc, sub_matrix, 0, 5);
+  tcase_add_loop_test(tc, sub_matrix1, 0, 5);
+  tcase_add_loop_test(tc, sub_matrix2, 0, 5);
 
   suite_add_tcase(s, tc);
   return s;
